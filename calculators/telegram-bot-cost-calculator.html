@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Telegram Bot Cost Calculator (2026) — Instant Price in USD &amp; USDT</title>
+<meta name="description" content="Free Telegram bot cost calculator. Choose your features and message volume, get an instant build price and estimated monthly hosting in USD and USDT. No email required." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#0b0f14" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://fyosamu.github.io/tools/telegram-bot-cost-calculator/" />
+<meta property="og:site_name" content="dazo" />
+<meta property="og:title" content="Telegram Bot Cost Calculator (2026)" />
+<meta property="og:description" content="Pick your features and message volume, get an instant build price and monthly hosting in USD and USDT. No email required." />
+<meta property="og:image" content="https://fyosamu.github.io/assets/og-card.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Telegram Bot Cost Calculator (2026)" />
+<meta name="twitter:description" content="Instant build price and monthly hosting for your Telegram bot. No email required." />
+<meta name="twitter:image" content="https://fyosamu.github.io/assets/og-card.jpg" />
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230b0f14'/><text x='32' y='45' font-family='Arial,Helvetica,sans-serif' font-size='40' font-weight='bold' fill='%234dd4ac' text-anchor='middle'>d</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+:root{--bg:#0b0f14;--bg2:#11161d;--panel:#151c25;--line:#222b36;--fg:#e6edf3;--mut:#8b98a8;--acc:#4dd4ac;--warn:#ffb454}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:0;z-index:50;background:rgba(11,15,20,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-weight:800;font-size:1.15rem;color:var(--fg)}.brand span{color:var(--acc)}
+.nav nav a{color:var(--mut);font-size:.92rem;margin-left:20px}.nav nav a:hover{color:var(--acc);text-decoration:none}
+.eyebrow{display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);background:rgba(77,212,172,.1);border:1px solid rgba(77,212,172,.28);padding:5px 12px;border-radius:999px}
+h1{font-size:clamp(2rem,5vw,3.1rem);line-height:1.12;letter-spacing:-.03em;margin:20px 0 14px}
+h2{font-size:clamp(1.4rem,3vw,2rem);letter-spacing:-.02em;margin:0 0 14px}
+h3{font-size:1.05rem;margin:0 0 8px}
+.lead{font-size:1.1rem;color:var(--mut);max-width:66ch;margin:0 0 8px}
+section{padding:60px 0}.muted{color:var(--mut)}.small{font-size:.87rem}
+.grid2{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:start}
+@media(max-width:860px){.grid2{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px}
+label{display:block;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin:0 0 10px}
+select{width:100%;background:var(--bg2);border:1px solid var(--line);color:var(--fg);padding:13px 14px;border-radius:10px;font:inherit;font-size:.98rem}
+select:focus{outline:none;border-color:var(--acc)}
+.opts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(max-width:520px){.opts{grid-template-columns:1fr}}
+.opt{display:flex;gap:10px;align-items:flex-start;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:12px 13px;cursor:pointer;transition:.15s}
+.opt:hover{border-color:#37445a}
+.opt input{margin:4px 0 0;accent-color:var(--acc);flex:0 0 auto}
+.opt.on{border-color:var(--acc);background:rgba(77,212,172,.07)}
+.opt b{display:block;font-size:.94rem;font-weight:600}
+.opt em{font-style:normal;font-size:.8rem;color:var(--mut)}
+.field{margin-top:26px}
+.result{position:sticky;top:88px;background:linear-gradient(160deg,#16202b,#101720);border:1px solid var(--acc);border-radius:18px;padding:28px;box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.price{font-size:clamp(2.4rem,6vw,3.4rem);font-weight:800;letter-spacing:-.04em;color:var(--acc);line-height:1}
+.price small{font-size:.9rem;font-weight:600;color:var(--mut);letter-spacing:0;display:block;margin-top:6px}
+.usdt{margin-top:16px;background:rgba(11,15,20,.6);border:1px dashed var(--line);border-radius:10px;padding:13px 15px;font-size:.95rem}
+.usdt b{color:var(--warn)}
+.cmp{margin-top:16px;border-top:1px solid var(--line);padding-top:16px}
+.cmp .r{display:flex;justify-content:space-between;gap:12px;font-size:.93rem;padding:7px 0;border-bottom:1px dashed rgba(34,43,54,.9)}
+.cmp .r:last-child{border-bottom:0}
+.cmp .r b{font-weight:700}
+.timeline{margin-top:14px;font-size:.93rem;color:var(--mut)}
+.btn{display:inline-block;background:var(--acc);color:#08120f;font-weight:700;padding:13px 22px;border-radius:10px;border:0;font-size:.97rem;cursor:pointer}
+.btn:hover{background:#3ec7a1;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--acc);border:1px solid rgba(77,212,172,.4)}
+.note{font-size:.8rem;color:var(--mut);margin-top:14px;line-height:1.55}
+table{width:100%;border-collapse:collapse;font-size:.94rem}
+th,td{text-align:left;padding:13px 12px;border-bottom:1px solid var(--line)}
+th{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);font-weight:700}
+td b{color:var(--acc)}
+.faq{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+.faq h3{margin:0 0 8px}.faq p{margin:0;color:var(--mut);font-size:.96rem}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.links a{display:block;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:18px;color:var(--fg);transition:.15s}
+.links a:hover{border-color:var(--acc);text-decoration:none;transform:translateY(-2px)}
+.links b{display:block;color:var(--acc);margin-bottom:4px}
+.links span{font-size:.87rem;color:var(--mut)}
+footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-size:.88rem}
+footer a{color:var(--mut)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="https://fyosamu.github.io/">da<span>zo</span></a>
+    <nav>
+      <a href="https://fyosamu.github.io/telegram-bot-development/">Bots</a>
+      <a href="https://fyosamu.github.io/ai-automation/">Automation</a>
+      <a href="https://fyosamu.github.io/partners/">Partners</a>
+      <a href="https://fyosamu.github.io/#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section style="padding-bottom:34px">
+  <div class="wrap">
+    <span class="eyebrow">Free tool · no email required</span>
+    <h1>Telegram Bot Cost Calculator</h1>
+    <p class="lead">Choose the features you actually need and how much traffic you expect. Get an instant <b>build price</b> and a realistic <b>monthly hosting estimate</b>, in USD and USDT.</p>
+    <p class="small muted">Nothing is sent anywhere. Everything is calculated in your browser.</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap grid2">
+
+    <div class="card">
+      <div class="field" style="margin-top:0">
+        <label for="kind">1 — What is the bot for?</label>
+        <select id="kind">
+          <option value="info">Information bot — menus, FAQs, content delivery</option>
+          <option value="support">Support bot — ticketing, handoff to a human</option>
+          <option value="sales">Sales / lead bot — qualification and follow-up</option>
+          <option value="notify">Notification bot — alerts, digests, monitoring</option>
+          <option value="admin">Admin / internal tool — approvals, workflows</option>
+          <option value="store">Store bot — catalogue, orders, payment</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>2 — Features</label>
+        <div class="opts" id="extras">
+          <label class="opt"><input type="checkbox" data-price="0" data-weeks="0" checked><span><b>Commands &amp; menus</b><em>Included in every build</em></span></label>
+          <label class="opt"><input type="checkbox" data-price="135" data-weeks="1"><span><b>Database storage</b><em>Users, state, history</em></span></label>
+          <label class="opt"><input type="checkbox" data-price="210" data-weeks="1"><span><b>Admin panel</b><em>Manage it without code</em></span></label>
+          <label class="opt"><input type="checkbox" data-price="285" data-weeks="2"><span><b>AI replies</b><em>LLM answers in chat</em></span></label>
+          <label class="opt"><input type="checkbox" data-price="195" data-weeks="1"><span><b>Payments</b><em>Crypto or card checkout</em></span></label>
+          <label class="opt"><input type="checkbox" data-price="240" data-weeks="1"><span><b>Web dashboard</b><em>Stats outside Telegram</em></span></label>
+          <label class="opt"><input type="checkbox" data-price="165" data-weeks="1"><span><b>Multi-language</b><em>Second language in chat</em></span></label>
+          <label class="opt"><input type="checkbox" data-price="180" data-weeks="1"><span><b>Third-party API</b><em>CRM, sheets, your backend</em></span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="volume">3 — Message volume per month</label>
+        <select id="volume">
+          <option value="0">Under 10,000 — small community or internal use</option>
+          <option value="45">10k – 100k — active group or product</option>
+          <option value="135">100k – 1M — serious traffic</option>
+          <option value="390">1M+ — high scale, needs queueing</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="lang">4 — Preferred stack</label>
+        <select id="lang">
+          <option value="0">No preference — use whatever fits</option>
+          <option value="0">Python (aiogram / python-telegram-bot)</option>
+          <option value="0">Node.js (grammY / telegraf)</option>
+          <option value="0">I already have code — finish it</option>
+        </select>
+      </div>
+    </div>
+
+    <div>
+      <div class="result">
+        <div class="small muted" style="letter-spacing:.1em;text-transform:uppercase;font-weight:700">Your estimate</div>
+        <div class="price" id="price">$350<small>one-time build, fixed scope</small></div>
+
+        <div class="usdt">Payable in <b>USDT</b> — <span id="usdt">350 USDT</span> <span class="small muted">(BEP-20 or ERC-20)</span></div>
+
+        <div class="cmp">
+          <div class="small muted" style="letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:6px">Running it afterwards</div>
+          <div class="r"><span>Hosting</span><b id="host">$4 – $8 / mo</b></div>
+          <div class="r"><span>AI replies (if selected)</span><b id="ai">$0 / mo</b></div>
+          <div class="r"><span>Typical agency bot quote</span><b id="agcy">$1,200 – $3,000</b></div>
+          <div class="r"><span>dazo</span><b id="ours" style="color:var(--acc)">$350</b></div>
+        </div>
+
+        <div class="timeline" id="timeline">Delivery: about 3–5 days</div>
+
+        <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" href="https://fyosamu.github.io/#contact">Get this quote confirmed</a>
+          <a class="btn ghost" href="https://fyosamu.github.io/telegram-bot-development/">What is included</a>
+        </div>
+
+        <p class="note">Hosting and AI figures are rough monthly ranges, not a bill — they move with traffic and how chatty the model is. The agency range is indicative only and exists so you can check a quote you already received. The dazo figure is our actual published price.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section style="padding-top:10px">
+  <div class="wrap">
+    <h2>What actually decides the price</h2>
+    <div class="links" style="margin-top:22px">
+      <a href="https://fyosamu.github.io/telegram-bot-development/">
+        <b>State, not messages</b>
+        <span>A bot that must remember where each user stopped is a different project from one that replies to /start. That is the fork in the price.</span>
+      </a>
+      <a href="https://fyosamu.github.io/ai-automation/">
+        <b>AI is cheaper than people expect</b>
+        <span>The model costs less than the engineering around it. What costs money is handling the case where it answers confidently and wrongly.</span>
+      </a>
+      <a href="https://fyosamu.github.io/tools/website-cost-calculator/">
+        <b>Bot plus website</b>
+        <span>If the bot feeds a dashboard or a store, price both — combined builds share one backend and cost less than two separate ones.</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="wrap">
+    <h2>Published prices</h2>
+    <div class="card" style="margin-top:18px;overflow-x:auto">
+      <table>
+        <thead><tr><th>Service</th><th>Price</th><th>Turnaround</th></tr></thead>
+        <tbody>
+          <tr><td>Telegram or Discord bot</td><td><b>$350</b></td><td>3–7 days</td></tr>
+          <tr><td>Custom website (theme or fully bespoke)</td><td><b>$450</b></td><td>5–7 days</td></tr>
+          <tr><td>Existing website → Android / iOS app</td><td><b>$600</b></td><td>5–10 days</td></tr>
+          <tr><td>AI workflow automation</td><td><b>$550</b></td><td>5–10 days</td></tr>
+          <tr><td>Technical SEO audit and fixes</td><td><b>$300</b></td><td>3–5 days</td></tr>
+          <tr><td>Speed optimisation (Core Web Vitals)</td><td><b>$250</b></td><td>2–4 days</td></tr>
+          <tr><td>Care plan — updates, backups, fixes</td><td><b>$90 / mo</b></td><td>ongoing</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted" style="margin-top:14px">All prices are fixed-scope and quoted before work starts. Payment in USDT (BEP-20 / ERC-20).</p>
+  </div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="wrap">
+    <h2>Common questions</h2>
+    <div style="margin-top:18px">
+      <div class="faq">
+        <h3>How long does a Telegram bot actually take?</h3>
+        <p>Most of what people ask for is three to seven days of work. The things that extend it are payments and anything that has to talk to a system you already run, because those are the parts that can fail in ways nobody notices until a customer does.</p>
+      </div>
+      <div class="faq">
+        <h3>Do I need a server to run it?</h3>
+        <p>Yes, but it is smaller than people imagine. A well-written bot handling tens of thousands of messages a month fits comfortably on a small VPS. The hosting line above is a realistic range rather than a promotional number.</p>
+      </div>
+      <div class="faq">
+        <h3>Who owns the code?</h3>
+        <p>You do. The repository and the deployment are handed over, so you are never renting your own bot from us.</p>
+      </div>
+      <div class="faq">
+        <h3>Can you take over a bot someone else wrote?</h3>
+        <p>Yes. Send the repository and a description of what is broken. Partial rewrites are quoted as maintenance rather than a new build.</p>
+      </div>
+      <div class="faq">
+        <h3>Why is payment in USDT?</h3>
+        <p>Because cards and PayPal are unreliable or unavailable for the countries many of our clients are in. We use BEP-20 or ERC-20 only — never TRC-20. The amount is fixed before work begins.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="wrap">
+    <div class="card" style="border-color:rgba(77,212,172,.35);text-align:center;padding:38px 26px">
+      <span class="eyebrow">One sentence is enough</span>
+      <h2 style="margin-top:16px">Send the spec, get the real number</h2>
+      <p class="lead" style="margin:0 auto 6px">No discovery call needed to see a price. Tell us what the bot should do and we reply with a fixed quote and a delivery date.</p>
+      <p class="small muted" style="margin:0 0 20px">Reply in under 24 hours, in English or Persian.</p>
+      <a class="btn" href="mailto:hkay7645@gmail.com?subject=Telegram%20bot%20quote%20request">hkay7645@gmail.com</a>
+      <p class="note" style="max-width:60ch;margin:18px auto 0">Paid in USDT — BEP-20 or ERC-20, never TRC-20. Already have half a bot? Send the repository and we quote it as maintenance instead of a new build.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="wrap">
+    <h2>Related</h2>
+    <div class="links" style="margin-top:18px">
+      <a href="https://fyosamu.github.io/tools/website-cost-calculator/"><b>Website cost calculator</b><span>Same idea, for websites and web apps.</span></a>
+      <a href="https://fyosamu.github.io/telegram-bot-development/"><b>Telegram bot development</b><span>What is actually included in the $350 build.</span></a>
+      <a href="https://fyosamu.github.io/ai-automation/"><b>AI workflow automation</b><span>Lead capture, document processing, scheduled agents.</span></a>
+      <a href="https://fyosamu.github.io/web-development/"><b>Web development</b><span>Custom sites from $450.</span></a>
+      <a href="https://fyosamu.github.io/website-to-app/"><b>Website to app</b><span>Android and iOS from an existing site.</span></a>
+      <a href="https://fyosamu.github.io/partners/"><b>Partner program</b><span>Send us work, keep 15% of the fee.</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+    <span>dazo — custom websites, bots and automation. Paid in USDT.</span>
+    <span><a href="https://fyosamu.github.io/">Home</a> · <a href="https://fyosamu.github.io/#contact">Contact</a> · <a href="https://fyosamu.github.io/sitemap.xml">Sitemap</a></span>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Telegram Bot Cost Calculator",
+  "url": "https://fyosamu.github.io/tools/telegram-bot-cost-calculator/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "description": "Free calculator that estimates the build price and monthly running cost of a Telegram bot in USD and USDT.",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "350", "priceCurrency": "USD" },
+  "provider": { "@type": "Organization", "name": "dazo", "url": "https://fyosamu.github.io/" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How long does a Telegram bot actually take?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most of what people ask for is three to seven days of work. Payments and integrations with existing systems extend it, because those are the parts that fail in ways nobody notices until a customer does." } },
+    { "@type": "Question", "name": "Do I need a server to run it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, but it is smaller than people imagine. A well-written bot handling tens of thousands of messages a month fits comfortably on a small VPS." } },
+    { "@type": "Question", "name": "Who owns the code?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You do. The repository and the deployment are handed over, so you are never renting your own bot from us." } },
+    { "@type": "Question", "name": "Can you take over a bot someone else wrote?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Send the repository and a description of what is broken. Partial rewrites are quoted as maintenance rather than a new build." } },
+    { "@type": "Question", "name": "Why is payment in USDT?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because cards and PayPal are unreliable or unavailable for many of our clients' countries. We use BEP-20 or ERC-20 only, never TRC-20, and the amount is fixed before work begins." } }
+  ]
+}
+</script>
+
+<script>
+(function(){
+  var base = {info:350, support:540, sales:630, notify:420, admin:720, store:1000};
+  var baseW = {info:3, support:5, sales:5, notify:4, admin:6, store:7};
+
+  function money(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
+
+  function calc(){
+    var k = document.getElementById('kind').value;
+    var usd = base[k] || 120;
+    var w = baseW[k] || 3;
+    var aiOn = false;
+
+    var boxes = document.querySelectorAll('#extras input[type=checkbox]');
+    for (var i=0;i<boxes.length;i++){
+      var lbl = boxes[i].nextSibling ? (boxes[i].nextSibling.textContent || '') : '';
+      if (boxes[i].checked){
+        usd += parseInt(boxes[i].getAttribute('data-price'),10) || 0;
+        w   += parseInt(boxes[i].getAttribute('data-weeks'),10) || 0;
+        boxes[i].closest('.opt').classList.add('on');
+        if (/AI replies/.test(lbl)) aiOn = true;
+      } else {
+        boxes[i].closest('.opt').classList.remove('on');
+      }
+    }
+
+    var volAdd = parseInt(document.getElementById('volume').value,10) || 0;
+    usd += volAdd;
+    if (volAdd >= 45) w += 2;
+    var hostLo = 4 + Math.round(volAdd / 9);
+    var hostHi = hostLo + 6 + Math.round(volAdd / 4.5);
+
+    document.getElementById('price').innerHTML = money(usd) + '<small>one-time build, fixed scope</small>';
+    document.getElementById('usdt').textContent = usd + ' USDT';
+    document.getElementById('host').textContent = '$' + hostLo + ' – $' + hostHi + ' / mo';
+    document.getElementById('ai').textContent = aiOn ? '$5 – $40 / mo' : '$0 / mo';
+
+    var agLo = Math.max(900, Math.round(usd * 8 / 100) * 100);
+    var agHi = Math.max(agLo + 1200, Math.round(usd * 22 / 100) * 100);
+    document.getElementById('agcy').textContent = money(agLo) + ' – ' + money(agHi);
+    document.getElementById('ours').textContent = money(usd);
+
+    var loW = Math.max(2, w - 1), hiW = w + 2;
+    document.getElementById('timeline').textContent =
+      'Delivery: about ' + loW + '–' + hiW + ' week' + (hiW === 1 ? '' : 's');
+  }
+
+  var els = document.querySelectorAll('#kind,#volume,#lang,#extras input[type=checkbox]');
+  for (var i=0;i<els.length;i++){ els[i].addEventListener('change', calc); }
+  calc();
+})();
+</script>
+
+</body>
+</html>

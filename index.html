@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>dazo cost calculators — free, standalone pricing tools</title>
+<meta name="description" content="Two standalone HTML pricing calculators. No build step, no dependencies, nothing leaves your browser. MIT licensed." />
+<meta name="robots" content="index, follow" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="dazo cost calculators" />
+<meta property="og:description" content="Two standalone HTML pricing calculators. No build step, no dependencies, nothing leaves your browser. MIT licensed." />
+<meta property="og:image" content="assets/calculator.png" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230b0f14'/><text x='32' y='45' font-family='Arial,Helvetica,sans-serif' font-size='40' font-weight='bold' fill='%234dd4ac' text-anchor='middle'>d</text></svg>" />
+<style>
+:root{
+  --bg:#0b0f14; --bg2:#11161d; --panel:#151c25; --line:#222b36;
+  --fg:#e6edf3; --mut:#8b98a8; --acc:#4dd4ac; --acc2:#7aa2ff; --warn:#ffb454;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font-family:Inter,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--acc);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:960px;margin:0 auto;padding:0 22px}
+header{border-bottom:1px solid var(--line);padding:22px 0}
+.brand{font-weight:800;font-size:1.15rem;color:var(--fg)}
+.brand span{color:var(--acc)}
+h1{font-size:clamp(1.9rem,5vw,2.8rem);line-height:1.15;letter-spacing:-.03em;margin:46px 0 14px}
+h2{font-size:1.35rem;letter-spacing:-.02em;margin:44px 0 14px}
+.lead{font-size:1.08rem;color:var(--mut);max-width:64ch;margin:0 0 6px}
+.pills{display:flex;gap:9px;flex-wrap:wrap;margin:22px 0 0}
+.pill{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--acc);background:rgba(77,212,172,.09);border:1px solid rgba(77,212,172,.3);
+  padding:5px 11px;border-radius:999px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+.card{display:block;background:var(--panel);border:1px solid var(--line);
+  border-radius:16px;padding:26px;color:var(--fg);transition:.16s}
+.card:hover{border-color:var(--acc);text-decoration:none;transform:translateY(-3px)}
+.card h3{margin:0 0 8px;font-size:1.12rem;color:var(--fg)}
+.card p{margin:0;color:var(--mut);font-size:.95rem}
+.card .go{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);
+  font-size:.9rem;font-weight:650;color:var(--acc)}
+.shot{margin-top:28px;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.shot img{display:block;width:100%;height:auto}
+pre{background:var(--bg2);border:1px solid var(--line);border-radius:10px;
+  padding:15px 16px;overflow-x:auto;font-size:.87rem;line-height:1.6;
+  color:#c8d4e0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:.9em;background:var(--bg2);border:1px solid var(--line);
+  padding:1px 5px;border-radius:5px}
+ul{color:var(--mut);padding-left:20px}
+li{margin:7px 0}
+li b{color:var(--fg)}
+footer{border-top:1px solid var(--line);margin-top:56px;padding:30px 0;
+  color:var(--mut);font-size:.9rem}
+.f{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap"><a class="brand" href="https://fyosamu.github.io/">da<span>zo</span></a></div>
+</header>
+
+<div class="wrap">
+
+  <h1>Two pricing calculators.<br />One file each. No dependencies.</h1>
+  <p class="lead">Standalone HTML you can drop on any static host. No build step, no npm,
+    no framework — and no request that ever leaves the browser.</p>
+
+  <div class="pills">
+    <span class="pill">MIT</span>
+    <span class="pill">zero dependencies</span>
+    <span class="pill">~24 KB per file</span>
+    <span class="pill">no tracking</span>
+    <span class="pill">readable maths</span>
+  </div>
+
+  <div class="grid">
+    <a class="card" href="calculators/website-cost-calculator.html">
+      <h3>Website cost calculator</h3>
+      <p>Project type, eight feature toggles, optional app build and care plan in.
+        Fixed price in USD and USDT, delivery window, and the typical market range
+        so you can check a quote you already have.</p>
+      <div class="go">Open the calculator &rarr;</div>
+    </a>
+    <a class="card" href="calculators/telegram-bot-cost-calculator.html">
+      <h3>Telegram bot cost calculator</h3>
+      <p>Six bot types, eight features and four message-volume tiers. Output is the
+        build price plus a realistic monthly hosting estimate — the number people
+        always underestimate.</p>
+      <div class="go">Open the calculator &rarr;</div>
+    </a>
+  </div>
+
+  <div class="shot">
+    <img src="assets/calculator.png"
+         alt="The website cost calculator showing a $465 estimate against a $3,300 to $7,900 small-agency range" />
+  </div>
+
+  <h2>Use it on your own site</h2>
+  <p class="lead">Easiest option is an iframe:</p>
+  <pre>&lt;iframe
+  src="https://fyosamu.github.io/tools/website-cost-calculator/"
+  style="width:100%;min-height:820px;border:0"
+  loading="lazy"
+  title="Website cost calculator"&gt;&lt;/iframe&gt;</pre>
+  <p class="lead">Or copy the <code>&lt;style&gt;</code>, markup and bottom
+    <code>&lt;script&gt;</code> straight into your page — the whole calculation is one
+    IIFE using plain selectors like <code>#type</code> and <code>#price</code>.</p>
+
+  <h2>Change the prices</h2>
+  <ul>
+    <li><b>Website calculator</b> — <code>base</code> and <code>baseWeeks</code> objects in the script set the starting
+      price and delivery per project type. Feature prices are attributes on the
+      checkboxes themselves: <code>data-price="180"</code>, <code>data-weeks="1"</code>.</li>
+    <li><b>Bot calculator</b> — <code>base</code> / <code>baseW</code> objects for the six bot types;
+      volume surcharges live on the <code>&lt;option&gt;</code> values.</li>
+    <li><b>Market range</b> — a handful of ratio multipliers on the total. Change the
+      ratios, not the output variables.</li>
+  </ul>
+
+  <h2>Why they were built</h2>
+  <p class="lead">Most agency sites hide pricing behind a contact form, because the usual
+    playbook is quote high, negotiate down, hope nobody compares you. This studio
+    publishes every price and built the calculator so you can get a number without
+    talking to anyone. The market ranges are indicative — they exist so you can
+    check a quote, not as a promise from anyone.</p>
+
+</div>
+
+<footer>
+  <div class="wrap f">
+    <span>MIT licensed · built by <a href="https://fyosamu.github.io/">dazo</a></span>
+    <span><a href="https://github.com/Fyosamu/dazo-cost-calculators">Source on GitHub</a> ·
+      <a href="https://fyosamu.github.io/partners/">Refer work, keep 15%</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
