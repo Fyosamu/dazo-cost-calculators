@@ -237,7 +237,7 @@ footer a{color:var(--mut)}
     <div style="margin-top:18px">
       <div class="faq">
         <h3>How long does a Telegram bot actually take?</h3>
-        <p>Most of what people ask for is three to seven days of work. The things that extend it are payments and anything that has to talk to a system you already run, because those are the parts that can fail in ways nobody notices until a customer does.</p>
+        <p>Most of what people ask for is two to five days of work. The things that extend it are payments and anything that has to talk to a system you already run, because those are the parts that can fail in ways nobody notices until a customer does.</p>
       </div>
       <div class="faq">
         <h3>Do I need a server to run it?</h3>
@@ -315,7 +315,7 @@ footer a{color:var(--mut)}
   "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "How long does a Telegram bot actually take?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Most of what people ask for is three to seven days of work. Payments and integrations with existing systems extend it, because those are the parts that fail in ways nobody notices until a customer does." } },
+      "acceptedAnswer": { "@type": "Answer", "text": "Most of what people ask for is two to five days of work. Payments and integrations with existing systems extend it, because those are the parts that fail in ways nobody notices until a customer does." } },
     { "@type": "Question", "name": "Do I need a server to run it?",
       "acceptedAnswer": { "@type": "Answer", "text": "Yes, but it is smaller than people imagine. A well-written bot handling tens of thousands of messages a month fits comfortably on a small VPS." } },
     { "@type": "Question", "name": "Who owns the code?",
@@ -370,9 +370,9 @@ footer a{color:var(--mut)}
     document.getElementById('agcy').textContent = money(agLo) + ' – ' + money(agHi);
     document.getElementById('ours').textContent = money(usd);
 
-    var loW = Math.max(2, w - 1), hiW = w + 2;
+    var loD = Math.max(2, w - 1), hiD = w + 2;
     document.getElementById('timeline').textContent =
-      'Delivery: about ' + loW + '–' + hiW + ' week' + (hiW === 1 ? '' : 's');
+      'Delivery: about ' + loD + '–' + hiD + ' days';
   }
 
   var els = document.querySelectorAll('#kind,#volume,#lang,#extras input[type=checkbox]');

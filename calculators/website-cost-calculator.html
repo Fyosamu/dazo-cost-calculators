@@ -401,9 +401,9 @@ footer a{color:var(--mut)}
     document.getElementById('mAgency').textContent = money(agLo) + ' – ' + money(agHi);
     document.getElementById('mOurs').textContent = money(usd);
 
-    var loW = Math.max(2, w - 1), hiW = w + 2;
+    var loD = 3 * w, hiD = 7 * w;
     document.getElementById('timeline').textContent =
-      'Delivery: about ' + loW + '–' + hiW + ' week' + (hiW === 1 ? '' : 's') +
+      'Delivery: about ' + loD + '–' + hiD + ' days' +
       (care ? ' · then $90 / month of care' : '');
   }
 
