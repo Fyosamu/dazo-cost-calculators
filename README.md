@@ -9,7 +9,7 @@ works — no build step, no framework, no npm install, no analytics, no request 
 leaves the browser.
 
 <p align="center">
-  <img src="assets/calculator.png" alt="The website cost calculator showing a $465 estimate against a $3,300–$7,900 small-agency range" width="900">
+  <img src="assets/calculator.png" alt="The website cost calculator showing its own fixed price beside the freelance and small-agency market range" width="900">
 </p>
 
 **[Live demo →](https://fyosamu.github.io/tools/website-cost-calculator/)** ·
