@@ -5,8 +5,8 @@
 [![Size](https://img.shields.io/badge/each%20file-~24%20KB-ffb454?style=flat-square)](#whats-in-this-repo)
 
 Two standalone HTML pricing calculators. Drop either file on any static host and it
-works — no build step, no framework, no npm install, no analytics, no request that
-leaves the browser.
+works — no build step, no framework, no npm install, no analytics, and nothing you
+pick or type is sent anywhere: every calculation runs in your browser.
 
 <p align="center">
   <img src="assets/calculator.png" alt="The website cost calculator showing its own fixed price beside the freelance and small-agency market range" width="900">
