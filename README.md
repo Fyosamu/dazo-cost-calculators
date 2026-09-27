@@ -40,7 +40,7 @@ a promise from anyone. The studio's own figure is its actual published price.
 | `calculators/website-cost-calculator.html` | Scope → price. Base type, 8 feature toggles, optional app build, optional care plan. Outputs USD + USDT, delivery window, and the market range. |
 | `calculators/telegram-bot-cost-calculator.html` | Features + message volume → build price and realistic monthly hosting. 6 bot types, 8 features, 4 volume tiers. |
 | `assets/calculator.png` | Screenshot used above. |
-| `index.html` | A tiny hub page so this repo can be served as-is (see *Live demo* above once GitHub Pages is on). |
+| `index.html` | A tiny hub page listing both calculators — serve this folder with any static server (`python -m http.server`) if you want it as a page. |
 
 Both calculators are **one HTML file each** — markup, styles, and the calculation
 script inline. That is the whole point: you can read the maths.
