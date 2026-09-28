@@ -113,7 +113,7 @@ without touching JS:
 
 ```html
 <label class="opt">
-  <input type="checkbox" data-price="180" data-weeks="1" data-label="Technical SEO setup">
+  <input type="checkbox" data-price="305" data-weeks="1" data-label="Technical SEO setup">
   ...
 </label>
 ```
@@ -170,13 +170,13 @@ Issues and pull requests are welcome — especially:
 
 | Service | Price | Turnaround |
 |---|---|---|
-| Custom website (theme or fully bespoke) | **$450** | 3–7 days |
-| Existing website → Android / iOS app | **$600** | 4–8 days |
-| Telegram or Discord bot | **$350** | 2–5 days |
-| AI workflow automation | **$550** | 3–7 days |
-| Technical SEO audit and fixes | **$300** | scoped per site |
-| Speed optimisation (Core Web Vitals) | **$250** | 1–3 days |
-| Care plan — updates, backups, fixes | **$90 / mo** | ongoing |
+| Custom website (theme or fully bespoke) | **$750 – $2,500** | 3–7 days |
+| Existing website → Android / iOS app | **$1,000 – $3,200** | 4–8 days |
+| Telegram or Discord bot | **$600 – $1,800** | 2–5 days |
+| AI workflow automation | **$900 – $3,000** | 3–7 days |
+| Technical SEO audit and fixes | **$500 – $1,500** | scoped per site |
+| Speed optimisation (Core Web Vitals) | **$400 – $1,200** | 1–3 days |
+| Care plan — updates, backups, fixes | **$150 – $400 / mo** | ongoing |
 
 Prices are fixed-scope and quoted before work starts. Payment in **USDT** —
 BEP-20 or ERC-20 only, never TRC-20.
